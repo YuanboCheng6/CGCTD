@@ -1,6 +1,7 @@
 clc;
 clear;
 close all;
+warning off
 
 addpath ./ClusteringMeasure
 addpath ./nonconvex_funs
@@ -25,9 +26,9 @@ param.p = 0.9;
 param.k =  2;
 f  = 1 ;
 param.iter = 50;
-%%
 cls_num = numel(unique(gt));
-perf = [];           
+
+ %%    
         ind_folds = folds{f};      
         [G,LOSS] = CGCTD(X,ind_folds,gt, param); 
 
